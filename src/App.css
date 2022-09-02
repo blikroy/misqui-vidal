@@ -24,3 +24,20 @@ nav ul li {
   margin-left: 5px;
   margin-right: 5px;
 }
+.carrito {
+  width: 50px;
+  position: relative;
+}
+.carritoIcono {
+  color: #000;
+}
+.carritoCantidad {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: tomato;
+  color: #fff;
+}
