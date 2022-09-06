@@ -5,8 +5,8 @@ import ItemListContainer from './components/ItemListContainer';
 function App() {
   return (
     <>
-    <NavBar></NavBar>
-    <ItemListContainer></ItemListContainer>
+      <NavBar />
+      <ItemListContainer saludo='Bienvenido a mi Tienda' />
     </>
   );
 }
