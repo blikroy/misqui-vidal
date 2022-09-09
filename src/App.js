@@ -6,7 +6,9 @@ function App() {
   return (
     <>
       <NavBar />
-      <ItemListContainer saludo='Bienvenido a mi Tienda' />
+      <section className='seccionCatalogo'>
+        <ItemListContainer />
+      </section>
     </>
   );
 }

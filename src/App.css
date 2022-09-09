@@ -44,3 +44,24 @@ nav ul li {
   justify-content: center;
   align-items: center;
 }
+.seccionCatalogo {
+  width: 90%;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.boxItems {
+  width: 49%;
+  text-align: center;
+}
+.boxItems img {
+  width: 50%;
+}
+.boxItems button {
+  background: #000;
+  color: #fff;
+  border: inherit;
+  padding: 10px 30px;
+}
