@@ -1,14 +1,22 @@
-import ItemCount from './ItemCount';
+import ItemList from './ItemList';
+import { useState, useEffect } from "react";
+import customFetch from "../utils/customFetch";
+const { contenidos } = require('../utils/Contenidos');
 
-const ItemListContainer = (props) => {
+const ItemListContainer = () => {
+    const [datos, setDatos] = useState([]);
 
-    const alerta = (numero) => {
-        alert("Acabas de agregar " + numero + " productos")
-    }
+    //componentDidUpdate
+    useEffect(() => {
+        customFetch(2000, contenidos)
+            .then(result => setDatos(result))
+            .catch(err => console.log(err))
+    }, []);
+    console.log(datos);
+    
     return(
         <>
-        <h1>{props.saludo}</h1>
-        <ItemCount limite={4} inicio={1} alerta={alerta} />
+        <ItemList items={datos}/>
       </>
     );
 }
