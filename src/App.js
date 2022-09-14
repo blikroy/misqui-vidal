@@ -1,14 +1,17 @@
 import './App.css';
 import NavBar from './components/NavBar.js';
-import ItemListContainer from './components/ItemListContainer';
+import ItemDetailContainer from './components/ItemDetailContainer';
 
 function App() {
   return (
     <>
       <NavBar />
-      <section className='seccionCatalogo'>
-        <ItemListContainer />
-      </section>
+      {/*
+        <section className='seccionCatalogo'>
+          <ItemListContainer />
+        </section>
+      */}
+      <ItemDetailContainer />
     </>
   );
 }

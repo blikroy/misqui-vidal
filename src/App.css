@@ -44,7 +44,7 @@ nav ul li {
   justify-content: center;
   align-items: center;
 }
-.seccionCatalogo {
+.seccionCatalogo, .detalleItem {
   width: 90%;
   margin: 0 auto;
   display: flex;
@@ -64,4 +64,10 @@ nav ul li {
   color: #fff;
   border: inherit;
   padding: 10px 30px;
+}
+.imagenDetalles {
+  width: 30%;
+}
+.detallesItem {
+  width: 49%;
 }
