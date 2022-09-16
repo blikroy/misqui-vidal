@@ -6,7 +6,7 @@ const ItemList = ({ datos }) => {
         <>
             {
                 datos.length > 0
-            ? datos.map(dato => <Item key={dato.id} nombre={dato.nombre} img={dato.img} />)
+            ? datos.map(dato => <Item key={dato.id} id={dato.id} nombre={dato.nombre} img={dato.img} />)
             : <p>Cargando...</p>
                 
             }

@@ -1,4 +1,10 @@
+import ItemCount from "./ItemCount";
+
 const ItemDetail = ({dato}) => {
+
+    const alerta = (numero, producto) => {
+        alert("Acabas de agregar " + numero + " " + producto)
+    }
     return(
         <>
        {dato.img
@@ -10,6 +16,7 @@ const ItemDetail = ({dato}) => {
                 <h1>{dato.nombre}</h1>
                 <p>{dato.detalle}</p>
                 <h3>Precio: ${dato.precio}</h3>
+                <ItemCount limite={4} inicio={1} alerta={alerta} producto={dato.nombre} />
             </div>
         </div>
         :<p>Cargando...</p>
