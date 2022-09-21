@@ -3,6 +3,7 @@ import { useState } from 'react'
 export const ItemCount = ({limite, inicio, alerta, producto}) => {
     const [contador, setContador] = useState(inicio)
 
+    
     const restar = () => {
         if(contador >= 2) {
             setContador(contador-1);
@@ -20,7 +21,11 @@ export const ItemCount = ({limite, inicio, alerta, producto}) => {
     <span>{contador}</span>
     <button onClick={sumar}>+</button>
     <br/>
-    <button onClick={()=>alerta(contador, producto)}>AGREGAR</button>
+    {
+        contador !== 0 ?
+        <button onClick={()=>alerta(contador, producto)}>AGREGAR</button>
+        : <button disabled>AGREGAR</button>
+    }
     </>
   )
 }
