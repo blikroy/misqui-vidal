@@ -1,12 +1,18 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import ItemCount from "./ItemCount";
+import { useContext } from "react";
+import { CartContext } from "./CartContext";
 
 const ItemDetail = ({dato}) => {
     const [contador, setContador] = useState(0)
+
+    const carrito = useContext(CartContext)
+
     const alerta = (numero, producto) => {
         alert("Acabas de agregar " + numero + " " + producto)
         setContador(numero);
+        carrito.addItem(dato, numero)
     }
     return(
         <>
