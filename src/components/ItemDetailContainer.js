@@ -1,17 +1,17 @@
 import ItemDetail from './ItemDetail';
 import { useState, useEffect } from "react";
 import { useParams } from 'react-router-dom';
-import customFetch from "../utils/CustomFetch";
-import contenidos from "../utils/Contenidos";
+import { getFirestore, doc, getDoc} from "firebase/firestore";
 
 const ItemDetailContainer = () => {
     const [dato, setDatos] = useState({});
     const { id } = useParams();
-
+    
     useEffect(() => {
-        customFetch(2000, contenidos.find(item => item.id === parseInt(id)))
-            .then(result => setDatos(result))
-            .catch(err => console.log(err))
+        const db = getFirestore();
+        const dbProductos = doc(db, "misqui", id);
+        getDoc(dbProductos)
+        .then(res=> setDatos({id: res.id, ...res.data()}))
     }, [id]);
     
     return(

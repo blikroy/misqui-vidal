@@ -9,7 +9,7 @@ const NavBar = () => {
                 <ul>
                     <li><Link to='/categoria/normal'>Hamburguesas</Link></li>
                     <li><Link to='/categoria/vegano'>Veganos</Link></li>
-                    <li><Link to='/categoria/infantil'>Kid</Link></li>
+                    <li><Link to='/categoria/mini'>Kid</Link></li>
                 </ul>
             </nav>
             <CartWidget></CartWidget>

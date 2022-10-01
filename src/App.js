@@ -5,6 +5,7 @@ import ItemDetailContainer from './components/ItemDetailContainer';
 import ItemListContainer from './components/ItemListContainer';
 import Cart from './components/Cart';
 import CartContextProvider from "./components/CartContext";
+import './utils/firebaseConfig.js';
 
 function App() {
   return (

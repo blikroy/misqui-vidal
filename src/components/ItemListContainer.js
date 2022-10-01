@@ -1,24 +1,24 @@
 import ItemList from './ItemList';
 import { useState, useEffect } from "react";
-import { useParams } from 'react-router-dom';   
-import customFetch from "../utils/CustomFetch";
-import contenidos from "../utils/Contenidos";
+import { useParams } from 'react-router-dom';
+import { getFirestore, collection, getDocs, query, where} from "firebase/firestore";
+
 
 const ItemListContainer = () => {
     const [datos, setDatos] = useState([]);
     const { categoria } = useParams()
 
     useEffect(() => {
+        const db = getFirestore();
+        const dbProductos = collection(db, "misqui");
         if(categoria) {
-            customFetch(2000, contenidos.filter(item => item.categoria === categoria))
-                .then(result => setDatos(result))
-                .catch(err => console.log(err))
+            const bdFiltro = query(dbProductos, where('categoria', '==', categoria))
+            getDocs(bdFiltro)
+            .then(res=> setDatos(res.docs.map(producto => ({id: producto.id, ...producto.data()}))))
         }else {
-            customFetch(2000, contenidos)
-                .then(result => setDatos(result))
-                .catch(err => console.log(err))
+            getDocs(dbProductos)
+            .then(res=> setDatos(res.docs.map(producto => ({id: producto.id, ...producto.data()}))))
         }
-        
     }, [categoria]);
     
     return(
