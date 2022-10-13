@@ -7,10 +7,8 @@ const CartContextProvider = ({children}) => {
     const [cartList, setCartList] = useState([])
 
     const addItem = (contenidos, cantidad) => {
-        //busco en mi array de CartList con find si el id que voy a cargar ya se encuentra o no
        
-
-        //si no lo encontro que cargue normal
+        //veriofico si el item ya se encuentra en cartList
         if(cartList.find(c => c.id === contenidos.id)) {
              //averiguamos posición del objeto en el array
              const index = cartList.findIndex(p => p.id === contenidos.id);
